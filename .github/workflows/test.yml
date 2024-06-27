@@ -13,6 +13,11 @@ jobs:
     name: Run Perl script
     runs-on: ubuntu-22.04
     steps:
+      - name: install cpanm and LWP::UserAgent
+        uses: perl-actions/install-with-cpanm@v1
+        with:
+          install: |
+            LWP::UserAgent
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: Run script
