@@ -1,4 +1,4 @@
-name: Release Nightly
+name: Test connection
 
 on:
   # Run nightly
@@ -13,4 +13,7 @@ jobs:
     name: Run Perl script
     runs-on: ubuntu-22.04
     steps:
-      - run: perl test-cert.pl
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Run script
+        run: perl test-cert.pl
