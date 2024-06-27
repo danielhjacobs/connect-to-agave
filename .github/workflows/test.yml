@@ -1,0 +1,16 @@
+name: Release Nightly
+
+on:
+  # Run nightly
+  schedule:
+    - cron: "*/5 * * * *"
+
+  # Allow for manual dispatch on GitHub
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    name: Run Perl script
+    runs-on: ubuntu-22.04
+    steps:
+      - run: perl test-cert.pl
